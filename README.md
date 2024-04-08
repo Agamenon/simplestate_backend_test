@@ -4,8 +4,25 @@ This project was create with Laravel Framework v10 and it only for interview pro
 
 ## User Case
 
-Algunas consideraciones:
- - Se creo una relaccion entre investments y transactions ya que las operaciones pueden ser de otro tipo a aparte de las que son
+Consideraciones:
+ - Se creó una relación entre `investments` y `transactions` ya que las operaciones pueden ser de otro tipo.
+ - La API de Debin solo soporta el `Banco`, `Cuenta` y `CBU` por lo que se creó variables de entorno para poder realizar el flujo ya que los datos provistos son fake.
+ - A fin de simular la instalación de un paquete con los modelos que se compartiran entre los microservicios se cargo el namespace `simplestate` en el `composer.json`, para un caso productivo se debe de crear el paquete correspondiente.
+ Ejemplo:
+ ```shell
+     "autoload": {
+        "psr-4": {
+            ....
+            "SimpleState\\":"simplestate/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            .....
+            "SimpleState\\":"simplestate/"
+        }
+    },
+```
 
 ## Project setup
 
